@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/file.css')}}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+<body>
+    
+<form action="{{ url_for('uploader') }}" method="POST">
+<div class="wrapper">
+    <div class="header">
+        MACHINE LEARNING TOOL BOX
+    </div>
+    
+    <div class="file-upload">
+        
+      <input type="file" name="filename" accept=".css/.txt"/>
+      <i class="fa fa-arrow-up"></i>
+      
+    </div>
+    
+    Do you want to perform Regression or classification?
+    <input type="radio" name="algotype" value="Classification">Classification</input>
+    <input type="radio" name="algotype" value="Regression">Regression</input>
+    <br>
+    <button type="submit" value="submit">Upload</button>
+  </div>
+  
+</form>
+</body>
+</html>
+  

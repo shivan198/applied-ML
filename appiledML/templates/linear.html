@@ -1,0 +1,63 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        {%block content%}
+        <table class="table table-bordered table-hover table-striped" style="width: 75%; margin: auto;">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col" colspan="2">For the given features</th>
+                <th scope="col">Predicted Value</th>
+              </tr>
+            </thead>
+            <tbody>
+                {%for each,a in xy%}
+                <tr>
+                {%for i in each%}
+                <td>{{i}}</td>
+                {%endfor%}
+                <td>{{a}}</td>
+                </tr>
+                {%endfor%}
+            </tbody>
+          </table>
+        <!-- {% if auto=="yes" %}
+        <p></p>
+            <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col" colspan="2">For the given features</th>
+                    <th scope="col">Predicted Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {for i,a in x,y}
+                    <tr>
+                        {for j in i}
+                        <td >{{j}}</td>
+                        {endfor}
+                    <td>{{a}}</td>
+                    </tr>
+                    {endfor}
+                </tbody>
+              </table>
+
+        {%else%}
+        <p>
+            <form action="{{ url_for('linearregression') }}" method="POST">
+            Enter the value of alpha<input type="text" name="alpha"/>
+            Enter the value of epoch<input type="text" name="epoch"/>
+
+            <button type="submit">submit</button>
+        </form>
+        
+    </form>
+        </p>
+        {% endif %}
+        <form action="{{ url_for('linearregression') }}" method="GET">
+            <img src="/linearregression" alt="my plot" method="GET">
+            <button type="submit" value="graph">Graph</button> -->
+        {%endblock%}
+    </body>
+</html>
